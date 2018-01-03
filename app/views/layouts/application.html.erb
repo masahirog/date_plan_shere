@@ -40,10 +40,10 @@
   <body style="background-color:#FAFAFA;">
   <% if user_signed_in? %>
       <div class="navbar navbar-default navbar-static-top col-xs-12 text-center" style="background-color:#fff;">
-          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;" href="/"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
-          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;" href="/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-          <%= link_to "/#{current_user.nickname}", class: "navbar-brand col-xs-3", style:"font-size:28px;padding:13px;" do %><span class="glyphicon glyphicon-user" aria-hidden="true"><% end %>
+          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;color:#A0A0A0;" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;color:#A0A0A0;" href="/"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+          <a class="navbar-brand col-xs-3" style="font-size:28px;padding:13px;color:#A0A0A0;" href="/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+          <%= link_to "/#{current_user.nickname}", class: "navbar-brand col-xs-3", style:"font-size:28px;padding:13px;color:#A0A0A0;" do %><span class="glyphicon glyphicon-user" aria-hidden="true"><% end %>
 
       </div>
   <% end %>
@@ -56,7 +56,7 @@
       </div><!--/row-->
 
       <footer class="text-center" style="margin-top:40px;">
-        <p>&copy; Company 2018</p>
+        <p>&copy; shioli 2018</p>
       </footer>
 
     </div> <!-- /container -->

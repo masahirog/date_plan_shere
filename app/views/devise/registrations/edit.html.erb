@@ -1,8 +1,5 @@
 <div class='regist_back'>
   <div class='log-up'>
-    <div class="pull-right">
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %>
-    </div>
     <div class='log-in-inner'>
       <% if current_user.name.present? %>
         <h4><%= current_user.name %></h4>
