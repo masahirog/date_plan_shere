@@ -8,17 +8,53 @@
 </div>
 
 <div class='col-xs-9'>
-  <div class=''>
     <div class='form-group'>
+      <p style="margin:0;">アカウント</p>
       @<%= current_user.nickname %>
     </div>
     <div class='form-group'>
-      <%= current_user.name %>
+      <p style="margin:0;">名前</p>
+
+      <% if current_user.name.present? %>
+        <%= current_user.name %>
+      <% else %>
+        -
+      <% end %>
+
     </div>
     <div class='form-group'>
-      <%= current_user.email %>
+      <p style="margin:0;">mail</p>
+      <% if current_user.email.present? %>
+        <%= current_user.email %>
+      <% else %>
+        -
+      <% end %>
     </div>
-  </div>
+    <div class='form-group'>
+      <p style="margin:0;">性別</p>
+      <% if current_user.sex.present? %>
+        <%= "男性" if current_user.sex==0 %>
+        <%= "女性" if current_user.sex==1 %>
+      <% else %>
+        -
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <p style="margin:0;">誕生日</p>
+      <% if current_user.birth_day.present? %>
+        <%= current_user.birth_day %>
+      <% else %>
+        -
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <p style="margin:0;">お住いの県</p>
+      <% if current_user.prefecture_id.present? %>
+        <%= current_user.prefecture.name %>
+      <% else %>
+        -
+      <% end %>
+    </div>
 </div>
 
   <div class='login_link text-center col-xs-12' style="margin-top:50px;">

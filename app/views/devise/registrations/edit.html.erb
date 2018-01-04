@@ -21,13 +21,21 @@
           <%= f.label :メールアドレス %><br />
           <%= f.email_field :email, class: 'form-control' %>
         </div>
+        <div class='form-group'>
+          <%= f.label :性別 %><br/>
+          <%= f.select :sex, [["男性",0], ["女性",1]], {:include_blank => true},{ :class => 'form-control'} %>
+        </div>
+        <div class='form-group'>
+          <%= f.label :生年月日 %><br />
+          <%= f.date_select(:birth_day, {use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 18), default: Date.new(1989, 1, 1), date_separator: '/'}, {:class => 'form-control',style:"display: inline-block;width: auto;"})  %>
+        </div>
+        <div class='form-group'>
+          <%= f.label :お住いの県名 %><br />
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {:include_blank => true},{ :class => 'form-control'} %>
+        </div>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-        <div class='form-group'>
-          <%= f.label "現在のパスワード" %> <br />
-          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-        </div>
 
         <div class='form-group'>
           <%= f.label "新しいパスワード" %>
@@ -36,15 +44,10 @@
           <% end %><br />
           <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
         </div>
-
         <div class='form-group'>
           <%= f.label :新しいパスワード（確認） %><br />
           <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
         </div>
-
-
-
-
         <div class='actions'>
           <%= f.submit class: 'btn btn-primary withripple', value: '更新する' %>
         </div>

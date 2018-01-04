@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(version: 20180104021659) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "address"
-    t.integer  "age"
+    t.string   "prefecture_id"
+    t.integer  "sex"
+    t.date     "birth_day"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
