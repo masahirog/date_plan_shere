@@ -1,4 +1,10 @@
+ApplicationRecord.extend ActiveHash::Associations::ActiveRecordExtensions
 class User < ApplicationRecord
+  has_many :likes
+  has_many :plans
+
+  belongs_to_active_hash :prefecture
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

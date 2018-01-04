@@ -3,4 +3,6 @@ class TopController < ApplicationController
   end
   def account
   end
+  def search
+  end
 end

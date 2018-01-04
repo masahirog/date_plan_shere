@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:nickname])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:nickname,:age,:address])
   end
   def update_resource(resource, params)
     resource.update_without_current_password(params)

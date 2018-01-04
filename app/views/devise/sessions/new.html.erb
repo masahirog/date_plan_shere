@@ -2,10 +2,6 @@
   <div class='log-in col-md-4 col-md-offset-4 text-center'>
     <h2>ログイン</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <% if alert %>
-        <p class='alert alert-danger'><%= alert %></p>
-      <% end %>
-
       <div class="form-group">
         <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'input form-control' %>
       </div>
