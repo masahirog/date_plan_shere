@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20180104021659) do
   end
 
   create_table "plan_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "plan_id"
     t.time     "start_time"
     t.string   "detail"
     t.text     "memo",       limit: 65535
     t.text     "url",        limit: 65535
     t.integer  "genre_id"
+    t.integer  "plan_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

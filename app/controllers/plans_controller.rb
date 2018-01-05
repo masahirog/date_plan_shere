@@ -15,6 +15,7 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @plan = Plan.new
+    @plan.plan_details.build
   end
 
   # GET /plans/1/edit
@@ -28,7 +29,7 @@ class PlansController < ApplicationController
 
     respond_to do |format|
       if @plan.save
-        format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
+        format.html { redirect_to "/", notice: 'デートプランを投稿しました！' }
         format.json { render :show, status: :created, location: @plan }
       else
         format.html { render :new }
@@ -40,6 +41,7 @@ class PlansController < ApplicationController
   # PATCH/PUT /plans/1
   # PATCH/PUT /plans/1.json
   def update
+    @plan.plan_details.build
     respond_to do |format|
       if @plan.update(plan_params)
         format.html { redirect_to @plan, notice: 'Plan was successfully updated.' }
@@ -69,6 +71,7 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:title, :prefecture_id, :user_id, :likes_count)
+      params.require(:plan).permit(:title, :prefecture_id, :user_id, :likes_count,
+        plan_details_attributes: [:id, :plan_id, :start_time, :detail, :memo, :url, :genre_id, :_destroy])
     end
 end
